@@ -21,11 +21,7 @@
                       </ul>
                     </div>
                 @endif --}}
-                  @if (session('success'))
-                  <div class="alert alert-success" role="success">
-                    {{session('success')}}
-                  </div>
-                  @endif
+                 
 
 
                 <!-- Marca Computadora -->

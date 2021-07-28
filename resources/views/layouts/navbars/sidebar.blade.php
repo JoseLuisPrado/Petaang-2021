@@ -51,7 +51,7 @@
       
       <!-- Barra Desplegable Listado-->
 
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+      <li class="nav-item {{ ($activePage == 'menu' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
           <!--<i><img style="width:25px" src="{{ asset('img/laravel.svg') }}"></i>-->
           <i class="material-icons">list</i>

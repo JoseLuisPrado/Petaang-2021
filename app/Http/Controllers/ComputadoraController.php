@@ -51,7 +51,7 @@ class ComputadoraController extends Controller
     {
         $computadora = Computadora::create($request->all());
 
-        return redirect()->route('computer.index', $computadora)->with('success','Usuario Creado Correctamente');
+        return redirect()->route('computer.index', $computadora)->with('success','Equipo Creado Correctamente');
     }
 
     /**
@@ -100,6 +100,13 @@ class ComputadoraController extends Controller
     public function destroy(Computadora $computadora)
     {
         $computadora->delete();
-        return redirect()->route('computer.index');
+        return redirect()->route('computer.index')->with('success','Equipo Eliminado Correctamente');;
+    }
+
+    public function consulta(Request $request)
+    {
+        $computadora = Computadora::find($request);
+        return $computadora;
+        return view('computer.consulta');
     }
 }

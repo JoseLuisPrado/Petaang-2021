@@ -64,7 +64,6 @@ Route::get('/computer/asignadas', [ComputadoraController::class, 'asignados'])->
 
 Route::get('/computer/disponibles', [ComputadoraController::class, 'disponibles'])->name ('computer.disponibles');
 
-
 Route::get('/computer/create', [ComputadoraController::class, 'create'])->name ('computer.create');
 
 Route::post('computer', [ComputadoraController::class, 'store'])->name('computer.store');
@@ -76,6 +75,9 @@ Route::get('computer/{computadora}/edit', [ComputadoraController::class, 'edit']
 Route::put('computer/{computadora}', [ComputadoraController::class, 'update'])->name('computer.update');
 
 Route::delete('computer/{computadora}', [ComputadoraController::class, 'destroy'])->name('computadoras.destroy');
+
+Route::get('computer//consulta', [ComputadoraController::class, 'consulta'])->name('computer.consulta');
+
 
 //Rutas al modulo asignacion
 

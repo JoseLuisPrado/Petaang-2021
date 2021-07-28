@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'equipos_asignados', 'titlePage'=> 'Equipos Disponibles'])
+@extends('layouts.main', ['activePage' => 'menu', 'titlePage'=> 'Equipos Disponibles'])
 
 
 @section('content')
@@ -17,6 +17,13 @@
                                    
                             </div>
                             <div class="card-body">
+
+                                @if (session('success'))
+                                <div class="alert alert-success" role="success">
+                                  {{session('success')}}
+                                </div>
+                                @endif
+
                                     <div class="row">
                                         <div class="col-12 text-right">
                                             <a href="{{route('computer.create')}}" class="btn btn-sm btn-facebook">Añadir Equipo</a>
@@ -42,20 +49,18 @@
                                             <td>{{$computadora->estado}}</td>
                                             <td class="td-actions text-right">
 
-                                                <form action="{{route('computadoras.destroy', $computadora)}}" method="POST">
+                                                <a href="#" class="btn btn-info"><i class="material-icons">assignment</i></a>
+                                                <a href="#" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                <form action="{{route('computadoras.destroy', $computadora)}}" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('delete')
-                                                    <button class="btn btn-info" type="submit">
-                                                        <i class="material-icons">computer</i>
-                                                    </button>
-                                                    <button class="btn btn-warning" type="submit">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
+                                                    
                                                     <button class="btn btn-danger" type="submit">
                                                         <i class="material-icons">close</i>
                                                     </button>
                                                     
-                                                    </form>
+                                                </form>
+                                                
                                                 
                                                 
 
